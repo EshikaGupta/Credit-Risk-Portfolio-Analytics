@@ -1,0 +1,17 @@
+[
+  "annual_income",
+  "loan_type",
+  "years_employed",
+  "repayment_avg_dpd",
+  "late_payment_count",
+  "missed_payment_count",
+  "loan_amount",
+  "loan_to_income_ratio",
+  "bureau_avg_dpd",
+  "bureau_total_outstanding",
+  "employment_type",
+  "age",
+  "bureau_active_account_ratio",
+  "bureau_outstanding_per_active_account",
+  "emi_payment_ratio"
+]

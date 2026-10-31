@@ -1,0 +1,74 @@
+{
+  "selected_model": "Logistic Regression",
+  "random_state": 42,
+  "test_size": 0.2,
+  "cv_splits": 5,
+  "xgb_random_search_iterations": 30,
+  "oversampling": "RandomOverSampler(sampling_strategy=0.2) inside each CV training fold; compared against passthrough",
+  "train_accounts": 11737,
+  "test_accounts": 2948,
+  "train_customers": 8000,
+  "test_customers": 2000,
+  "customer_overlap": 0,
+  "feature_count": 15,
+  "model_features": [
+    "annual_income",
+    "loan_type",
+    "years_employed",
+    "repayment_avg_dpd",
+    "late_payment_count",
+    "missed_payment_count",
+    "loan_amount",
+    "loan_to_income_ratio",
+    "bureau_avg_dpd",
+    "bureau_total_outstanding",
+    "employment_type",
+    "age",
+    "bureau_active_account_ratio",
+    "bureau_outstanding_per_active_account",
+    "emi_payment_ratio"
+  ],
+  "threshold_selection": {
+    "threshold": 0.19518686849893355,
+    "oof_precision": 0.28693009118541035,
+    "oof_recall": 0.4989429175475687,
+    "oof_f1": 0.3643380934002316
+  },
+  "test_probability_metrics": {
+    "Model": "Logistic Regression",
+    "ROC_AUC": 0.6881280633060431,
+    "PR_AUC": 0.32694932189941417,
+    "KS": 0.2727677226801019,
+    "Gini": 0.3762561266120863
+  },
+  "test_classification_metrics": {
+    "Accuracy": 0.7167571234735414,
+    "Precision": 0.28418549346016647,
+    "Recall": 0.5063559322033898,
+    "F1": 0.36405178979436403,
+    "Threshold": 0.19518686849893355,
+    "Train_ROC_AUC": 0.6868354848996657,
+    "Test_ROC_AUC": 0.6881280633060431,
+    "Test_PR_AUC": 0.32694932189941417
+  },
+  "logistic_regression_cv": {
+    "Model": "Logistic Regression",
+    "CV_ROC_AUC_mean": 0.6826667316528616,
+    "CV_ROC_AUC_std": 0.010480565217279171,
+    "CV_PR_AUC_mean": 0.31489032434924624,
+    "CV_PR_AUC_std": 0.017681808603450897
+  },
+  "xgboost_cv": {
+    "Model": "XGBoost",
+    "CV_ROC_AUC_mean": 0.6752979824713066,
+    "CV_ROC_AUC_std": 0.010857350257202985,
+    "CV_PR_AUC_mean": 0.30494264699152357,
+    "CV_PR_AUC_std": 0.016392769292429832
+  },
+  "limitations": [
+    "The dataset does not define a prediction snapshot or horizon.",
+    "Full-history repayment and bureau aggregates may contain information not available at loan origination.",
+    "Collections features are excluded from model inputs due to unresolved event timing.",
+    "The model estimates patterns in the supplied synthetic dataset and is not a validated production default model."
+  ]
+}
