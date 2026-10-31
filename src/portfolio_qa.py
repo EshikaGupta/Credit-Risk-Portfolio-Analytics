@@ -14,7 +14,7 @@ import pandas as pd
 import streamlit as st
 
 load_dotenv()
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL_NAME = st.secrets["GEMINI_MODEL"] if "GEMINI_MODEL" in st.secrets else os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 DIMENSIONS = {
     "loan_type": "Loan type",
@@ -38,7 +38,7 @@ INTENTS = ["overall", "rank", "segment_metric", "compare", "unsupported"]
 def _get_api_key() -> str | None:
     """Read key from Streamlit Cloud secrets, then local environment."""
     try:
-        key = os.getenv("GEMINI_API_KEY")
+        key = st.secrets["GEMINI_API_KEY"]
         if key:
             return str(key).strip()
     except Exception:
